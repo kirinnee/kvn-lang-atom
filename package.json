@@ -5,7 +5,7 @@
   "description": "Kirinnee Visual Novel language pack",
   "keywords": [
   ],
-  "repository": "https://github.com/atom/kvn-lang",
+  "repository": "https://github.com/kirinnee/kvn-lang-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
