@@ -1,22 +1,20 @@
 {
   "name": "kvn-lang",
   "main": "./lib/kvn-lang",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Kirinnee Visual Novel language pack",
-  "keywords": [
-  ],
+  "keywords": [],
   "repository": "https://github.com/kirinnee/kvn-lang-atom",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "providedServices": {
-  "autocomplete.provider": {
-    "versions": {
-      "4.0.0": "getProvider"
+    "autocomplete.provider": {
+      "versions": {
+        "4.0.0": "getProvider"
+      }
     }
   }
-}
 }
