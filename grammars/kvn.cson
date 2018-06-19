@@ -1,0 +1,86 @@
+'scopeName': 'source.kvn'
+'name': 'Kirinnee Visual Novel'
+'fileTypes': ['kvn']
+
+'patterns': [
+
+  {
+    'match': '\\b(declare|dec|macro)\\s+\\b([a-zA-Z0-9,]+)\\s+\\b(as)\\s+\\b(stage|character)'
+    'captures':
+      '1':
+        'name': 'keyword.control.kvn'
+      '2':
+        'name': 'entity.name.function.kvn'
+      '3':
+        'name' : 'keyword.control.kvn'
+      '4':
+        'name' : 'gameobj.kvn'
+  },
+  {
+    'match':'\\b(macro)\\s+\\b([a-zA-Z0-9]+)\\s([^\\n]+)\\n'
+    'captures':
+      '1':
+        'name': 'keyword.control.kvn'
+      '2':
+        'name': 'entity.name.function.kvn'
+      '3':
+        'name': 'macro.args.kvn'
+  },
+  {
+    'match' : '\\b(scene)\\s+\\b([a-zA-Z0-9_]+)\\s+\\b([a-zA-Z0-9_]+)'
+    'captures' :
+      '1':
+        'name': 'object.scene.kvn'
+      '2':
+        'name': 'name.scene.kvn'
+      '3':
+        'name': 'id.scene.kvn'
+  },
+  {
+    'match': '='
+    'name' : 'action.equal.kvn'
+  },
+  {
+    'match' : 'true|false'
+    'name' : 'action.boolean.kvn'
+  },
+  {
+    'match': '\\b(let)\\s+\\b([^\\s]+)\\s+\\b(be)\\s+\\b([^\\s]+)\\s+\\b(as)\\s+\\b(string|number|object|boolean|null)'
+    'captures':
+      '1':
+        'name': 'keyword.control.kvn'
+      '3':
+        'name': 'keyword.control.kvn'
+      '5':
+        'name': 'keyword.control.kvn'
+      '6':
+        'name': 'gameobj.kvn'
+
+  },
+  {
+    'match' : 'mod'
+    'name' : 'keyword.control.kvn'
+  },
+  {
+    'match' : 'frame'
+    'name' : 'object.frame.kvn'
+  },
+  {
+    'match' : '//[^\n]*'
+    'name' : 'comment.line.double-slash'
+  },
+  {
+    'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+    'name': 'constant.numeric.mylanguage'
+  },
+  {
+    'match': '^[\\s\\t]*([\\w\\-]+)'
+    'name': 'action.equal.kvn'
+  }
+
+
+
+
+
+
+]
