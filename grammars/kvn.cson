@@ -74,13 +74,8 @@
     'name': 'constant.numeric.mylanguage'
   },
   {
-    'match': '^[\\s\\t]*([\\w\\-]+)'
+    'match': '^[\\s\\t]*[0-9a-zA-Z,/]+'
     'name': 'action.equal.kvn'
   }
-
-
-
-
-
 
 ]
