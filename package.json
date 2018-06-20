@@ -1,7 +1,7 @@
 {
   "name": "kvn-lang",
   "main": "./lib/kvn-lang",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Kirinnee Visual Novel language pack",
   "keywords": [],
   "repository": "https://github.com/kirinnee/kvn-lang-atom",
