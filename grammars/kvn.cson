@@ -5,20 +5,7 @@
 'patterns': [
 
 
-    {
-        'match' : '(text|msg)\\s*=\\s*([^=]+)\\s+([^=]+=|$)'
-        'captures':
-            '2':
-                'name': 'value.kvn'
-    },
-    {
-        'match':'[(\\s|\\t)]+([a-zA-Z_,/0-9]+)\\s+(cont|speak|say|contSpeak|contSay|contSpeaking)\\s+([^=]+)$'
-        'captures':
-            '1':
-                'name': 'action.equal.kvn'
-            '3':
-                'name': 'value.kvn'
-    },
+
     {
         'match': '\\b(declare|dec|macro)\\s+\\b([a-zA-Z0-9,]+)\\s+\\b(as)\\s+\\b(stage|character)'
         'captures':
@@ -52,8 +39,19 @@
                 'name': 'id.scene.kvn'
     },
     {
-        'match': '='
-        'name' : 'action.equal.kvn'
+        'match': '[\\s|\\t]+([a-zA-Z0-9,/_]+)\\s+[a-zA-Z0-9]+\\s((\\s*([a-zA-Z]+)\\s*(=)\\s*([^=]+)(\\s+|$))|([^=]+)(\\s|$))'
+        'captures':
+            '1':
+                'name' :'action.equal.kvn'
+
+            '4':
+                'name': 'key.kvn'
+            '5':
+                'name' : 'action.equal.kvn'
+            '6':
+                'name':'action.value.kvn'
+            '8':
+                'name':'action.value.kvn'
     },
     {
         'match' : 'true|false'
