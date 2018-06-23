@@ -4,91 +4,91 @@
 
 'patterns': [
 
-
-
     {
-        'match': '\\b(declare|dec|macro)\\s+\\b([a-zA-Z0-9,]+)\\s+\\b(as)\\s+\\b(stage|character)'
+        'match':'^(declare)\\s+[a-zA-Z0-9_,]+\\s+(as)\\s+(stage|character|sound|option)'
         'captures':
             '1':
-                'name': 'keyword.control.kvn'
+                'name': 'control.keyword.kvn'
             '2':
-                'name': 'entity.name.function.kvn'
+                'name': 'control.keyword.kvn'
             '3':
-                'name' : 'keyword.control.kvn'
-            '4':
-                'name' : 'gameobj.kvn'
+                'name': 'gameobj.kvn'
     },
     {
-        'match':'\\b(macro)\\s+\\b([a-zA-Z0-9]+)\\s([^\\n]+)\\n'
+        'match':'^(scene)\\s+([a-zA-Z0-9_]+)\\s+([a-zA-Z0-9_]+)'
         'captures':
-            '1':
-                'name': 'keyword.control.kvn'
-            '2':
-                'name': 'entity.name.function.kvn'
-            '3':
-                'name': 'macro.args.kvn'
-    },
-    {
-        'match' : '\\b(scene)\\s+\\b([a-zA-Z0-9_]+)\\s+\\b([a-zA-Z0-9_]+)'
-        'captures' :
             '1':
                 'name': 'object.scene.kvn'
             '2':
-                'name': 'name.scene.kvn'
+                'name':'name.scene.kvn'
             '3':
-                'name': 'id.scene.kvn'
+                'name':'id.scene.kvn'
     },
     {
-        'match': '[\\s|\\t]+([a-zA-Z0-9,/_]+)\\s+[a-zA-Z0-9]+\\s((\\s*([a-zA-Z]+)\\s*(=)\\s*([^=]+)(\\s+|$))|([^=]+)(\\s|$))'
+        'match':'[\\s|\\t]*(play)\\s+([a-zA-Z0-9_]+)\\s+([0-9]+)'
         'captures':
             '1':
-                'name' :'action.equal.kvn'
-
+                'name': 'control.keyword.kvn'
+            '2':
+                'name':'id.scene.kvn'
+            '3':
+                'name':'constant.numeric.kvn'
+    },
+    {
+        'match':'frame'
+        'name': 'object.frame.kvn'
+    },
+    {
+        'match':'[\\s|\\t]*(mod)\\s+.+$'
+        'captures':
+            '1':
+                'name':'control.keyword.kvn'
+    },
+    {
+        'match': '[\\s|\\t]*(let)\\s+[a-zA-Z0-9_]+\\s+(be)\\s+[a-zA-Z0-9_]+\\s+(as)\\s+(string|object|boolean|array|number)'
+        'captures':
+            '1':
+                'name': 'control.keyword.kvn'
+            '2':
+                'name': 'control.keyword.kvn'
+            '3':
+                'name': 'control.keyword.kvn'
             '4':
-                'name': 'key.kvn'
-            '5':
-                'name' : 'action.equal.kvn'
-            '6':
-                'name':'action.value.kvn'
-            '8':
-                'name':'action.value.kvn'
+                'name': 'gameobj.kvn'
     },
+
     {
-        'match' : 'true|false'
-        'name' : 'action.boolean.kvn'
-    },
-    {
-        'match': '\\s*(let)\\s+\\b([^\\s]+)\\s+\\b(be)\\s+\\b([^\\s]+)\\s+\\b(as)\\s+\\b(string|number|object|boolean|null)'
+        'match':'^[\\s|\\t]+([a-zA-Z0-9_,\/]+)\\s+[a-zA-Z0-9]+'
         'captures':
             '1':
-                'name': 'keyword.control.kvn'
-            '3':
-                'name': 'keyword.control.kvn'
-            '5':
-                'name': 'keyword.control.kvn'
-            '6':
-                'name': 'gameobj.kvn'
-
+                'name': 'action.equal.kvn'
     },
     {
-        'match' : '\\s*mod'
-        'name' : 'keyword.control.kvn'
-    },
-    {
-        'match' : 'frame'
-        'name' : 'object.frame.kvn'
-    },
-    {
-        'match' : '.*(//[^\n]*)'
-        'name' : 'comment.line.double-slash'
-    },
-    {
-        'match': '\\b(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
-        'name': 'constant.numeric.mylanguage'
-    },
-    {
-        'match': '^[\\s\\t]*[0-9a-zA-Z,/]+'
-        'name': 'action.equal.kvn'
+        'match': '^(create)\\s+(character|sound|stage|option)\\s+[^\\s]+'
+        'captures':
+            '1':
+                'name':'control.keyword.kvn'
+            '2':
+                'name':'gameobj.kvn'
     }
+    ,
+    {
+        'match' : '([^=\\s]+)\\s*(=)\\s*([^=]+)(\\s+|$)'
+        'captures':
+            '1':
+                'name' : 'key.kvn'
+            '2':
+                'name' : 'action.equal.kvn'
+            '3':
+                'name' : 'value.kvn'
+    }
+    ,
+    {
+        'match' : '([^=]+)\\s*$'
+        'name' : 'value.kvn'
+    }
+
+
+
 
 ]
