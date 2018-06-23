@@ -3,7 +3,14 @@
 'fileTypes': ['kvn']
 
 'patterns': [
+    {
 
+        'match': '[^/]*(//.*$)'
+        'captures':
+            '1':
+                'name': 'comment.double-slash.kvn'
+
+    },
     {
         'match':'^(declare)\\s+[a-zA-Z0-9_,]+\\s+(as)\\s+(stage|character|sound|option)'
         'captures':
@@ -24,6 +31,8 @@
             '3':
                 'name':'id.scene.kvn'
     },
+
+
     {
         'match':'[\\s|\\t]*(play)\\s+([a-zA-Z0-9_]+)\\s+([0-9]+)'
         'captures':
@@ -35,7 +44,7 @@
                 'name':'constant.numeric.kvn'
     },
     {
-        'match':'frame'
+        'match':'frame|start'
         'name': 'object.frame.kvn'
     },
     {
@@ -86,7 +95,8 @@
     {
         'match' : '([^=]+)\\s*$'
         'name' : 'value.kvn'
-    }
+    },
+
 
 
 
