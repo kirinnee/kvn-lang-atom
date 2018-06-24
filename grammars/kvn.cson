@@ -54,7 +54,7 @@
                 'name':'control.keyword.kvn'
     },
     {
-        'match': '[\\s|\\t]*(let)\\s+[a-zA-Z0-9_]+\\s+(be)\\s+[a-zA-Z0-9_]+\\s+(as)\\s+(string|object|boolean|array|number)'
+        'match': '[\\s|\\t]*(let)\\s+[a-zA-Z0-9_]+\\s+(be)\\s+.+\\s+(as)\\s+(string|object|boolean|array|number)'
         'captures':
             '1':
                 'name': 'control.keyword.kvn'
