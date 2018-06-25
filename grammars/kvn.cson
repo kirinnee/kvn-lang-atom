@@ -31,7 +31,16 @@
             '3':
                 'name':'id.scene.kvn'
     },
-
+    {
+        'match':'^(macro)\\s+([a-zA-Z0-9_]+)\\s+(.+)'
+        'captures':
+            '1':
+                'name':'control.keyword.kvn'
+            '2':
+                'name':'action.equal.kvn'
+            '3':
+                'name':'macro.args.kvn'
+    }
 
     {
         'match':'[\\s|\\t]*(play)\\s+([a-zA-Z0-9_]+)\\s+([0-9]+)'
